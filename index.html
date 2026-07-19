@@ -255,7 +255,133 @@
             letter-spacing: 0.5px;
         }
 
-        /* SECCIÓN DE SEGURIDAD Y GARANTÍA */
+        /* NUEVA SECCIÓN: CALCULADORA INTERACTIVA DE DIAGNÓSTICO FINANCIERO */
+        .simulator-section {
+            background-color: var(--equifax-light);
+            padding: 80px 8%;
+            border-top: 1px solid #E2E8F0;
+        }
+
+        .simulator-container {
+            max-width: 750px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+            border: 1px solid #E2E8F0;
+        }
+
+        .simulator-container h2 {
+            color: var(--equifax-red);
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .simulator-container .desc {
+            text-align: center;
+            color: #64748B;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #0F172A;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #CBD5E1;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+            color: var(--equifax-dark);
+            background-color: #FFF;
+        }
+
+        .result-box {
+            background-color: #F1F5F9;
+            padding: 25px;
+            border-radius: 6px;
+            border-left: 5px solid var(--success-green);
+            margin-top: 30px;
+        }
+
+        .result-box h4 {
+            color: #0F172A;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .result-box p {
+            color: #475569;
+            font-size: 15px;
+        }
+
+        /* NUEVA SECCIÓN: LÍNEA DE TIEMPO DEL PROCESO CORPORATIVO */
+        .timeline-section {
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .timeline-section h2 {
+            color: var(--equifax-blue);
+            font-size: 32px;
+            margin-bottom: 50px;
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline-item {
+            background: #FFF;
+            padding: 30px 20px;
+            border-radius: 6px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+            position: relative;
+        }
+
+        .timeline-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--equifax-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0 auto 20px auto;
+        }
+
+        .timeline-item h3 {
+            font-size: 18px;
+            color: #0F172A;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            font-size: 14px;
+            color: #64748B;
+        }
+
+        /* BARRA DE SEGURIDAD Y CONFIANZA LEGAL */
         .safety-bar {
             padding: 40px 8%;
             background-color: #F1F5F9;
@@ -339,7 +465,7 @@
             color: var(--amber-gold);
             margin-bottom: 15px;
             font-size: 14px;
-            }
+        }
 
         .testimonial-card p {
             color: #475569;
@@ -470,7 +596,7 @@
             box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
         }
 
-        /* Pie de Página Corporativo Expandido con tus Datos Oficiales */
+        /* Pie de Página Corporativo Expandido */
         footer {
             background: #0F172A;
             color: #FFFFFF;
@@ -614,6 +740,57 @@
         </aside>
     </main>
 
+    <!-- INTERACTIVO: DIAGNÓSTICO FINANCIERO EXPRESS CON JAVASCRIPT -->
+    <section class="simulator-section">
+        <div class="simulator-container">
+            <h2>Diagnóstico Crediticio Preliminar</h2>
+            <p class="desc">Selecciona tu situación actual para conocer la viabilidad legal de tu caso en segundos.</p>
+            
+            <div class="form-group">
+                <label for="situation">¿Cuál es el estado actual de tu reporte negativo?</label>
+                <select id="situation" onchange="calcularDiagnostico()">
+                    <option value="0">-- Selecciona una opción --</option>
+                    <option value="1">Tengo deudas de más de 5 años ya pagadas pero el reporte sigue ahí</option>
+                    <option value="2">Estoy reportado por una deuda que nunca adquirí (Suplantación)</option>
+                    <option value="3">Tengo una deuda muy antigua activa que deseo negociar</option>
+                    <option value="4">Pagué mi saldo hace meses pero no me han actualizado el puntaje</option>
+                </select>
+            </div>
+
+            <div class="result-box" id="diagnostic-result" style="display:none;">
+                <h4 id="result-title">Análisis de Viabilidad Legal</h4>
+                <p id="result-text">Por favor selecciona una opción.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN INTERACTIVA: LÍNEA DE TIEMPO DEL PROCESO -->
+    <section class="timeline-section">
+        <h2>Nuestro Método de Trabajo Estratégico</h2>
+        <div class="timeline-grid">
+            <div class="timeline-item">
+                <div class="timeline-number">01</div>
+                <h3>Auditoría y Análisis</h3>
+                <p>Estudio técnico minucioso de tus alertas en las principales centrales comerciales.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">02</div>
+                <h3>Estrategia de Habeas Data</h3>
+                <p>Redacción y radicación formal de los recursos legales pertinentes para tu caso.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">03</div>
+                <h3>Seguimiento y Control</h3>
+                <p>Monitoreo estricto de los tiempos legales de respuesta de las entidades.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">04</div>
+                <h3>Optimización de Score</h3>
+                <p>Notificación de la eliminación del reporte y reingreso limpio al sistema crediticio.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- BARRA DE SEGURIDAD Y CONFIANZA LEGAL -->
     <section class="safety-bar">
         <div class="safety-item">
@@ -718,7 +895,7 @@
         </div>
     </section>
 
-    <!-- Caja de Llamado a la Acción -->
+    <!-- Caja de Llamado a la Acción (Fondo Rojo) -->
     <div class="cta-container-wrapper">
         <div class="cta-box">
             <div class="cta-text">
@@ -760,6 +937,37 @@
             <p>Aviso Legal: Las marcas, logotipos y referencias visuales mencionadas pertenecen a sus respectivos titulares. Este sitio web provee asesoría privada e independiente y no representa de manera directa a ninguna central de riesgo gubernamental o bancaria. Las imágenes de testimonios son de carácter ilustrativo.</p>
         </div>
     </footer>
+
+    <!-- LOGICA SCRIPT INTERACTIVA DEL SIMULADOR -->
+    <script>
+        function calcularDiagnostico() {
+            var selected = document.getElementById("situation").value;
+            var resultBox = document.getElementById("diagnostic-result");
+            var title = document.getElementById("result-title");
+            var text = document.getElementById("result-text");
+
+            if (selected == "0") {
+                resultBox.style.display = "none";
+                return;
+            }
+
+            resultBox.style.display = "block";
+
+            if (selected == "1") {
+                title.innerHTML = "🎯 Viabilidad Legal Alta (100% Aplicable)";
+                text.innerHTML = "De acuerdo con el régimen general de Habeas Data, los reportes negativos deben caducar tras el cumplimiento de los tiempos establecidos por ley. Tu caso aplica para una eliminación directa mediante recurso administrativo formal.";
+            } else if (selected == "2") {
+                title.innerHTML = "🛡️ Protocolo de Urgencia por Suplantación";
+                text.innerHTML = "Este caso vulnera tus derechos financieros constitucionales. Activaremos un proceso inmediato de exclusión de datos por falsedad de origen y suplantación de identidad comercial ante las centrales.";
+            } else if (selected == "3") {
+                title.innerHTML = "📊 Viabilidad Estratégica Media";
+                text.innerHTML = "En carteras antiguas activas, diseñamos una estrategia de negociación de saldo de castigo combinada con un acuerdo de actualización inmediata de perfil crediticio para mitigar la permanencia del reporte.";
+            } else if (selected == "4") {
+                title.innerHTML = "⚡ Reclamación por Mora en Actualización";
+                text.innerHTML = "Las entidades tienen un plazo perentorio por ley para reportar la extinción de la obligación financiera. Estructuraremos una solicitud formal por incumplimiento de términos de actualización.";
+            }
+        }
+    </script>
 
 </body>
 </html>
