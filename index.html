@@ -64,7 +64,7 @@
             color: var(--equifax-red);
         }
 
-        /* Contenedor optimizado para TU LOGO REAL LOCAL */
+        /* Contenedor optimizado para TU LOGO GENERADO EN RED */
         .logo-999 {
             height: 60px; /* Tamaño ideal para resaltar el velocímetro */
             width: auto;
@@ -674,14 +674,14 @@
 </head>
 <body>
 
-    <!-- Encabezado con Logotipo y TU PROPIO LOGO REAL LOCAL CONFIGURADO -->
+    <!-- Encabezado con Logotipo y TU LOGO PROCESADO EN RED DESDE EL ENLACE DIRECTO -->
     <header>
         <div class="brand-container">
             <div class="logo">
                 <i class="fa-solid fa-building-shield"></i> RENOVA <span>SCORE</span>
             </div>
-            <!-- Buscando de forma local la imagen cargada en tu repositorio -->
-            <img src="logo.jpeg" alt="Logo Score Perfecto 999" class="logo-999">
+            <!-- Carga directa del logotipo optimizado basado en tu imagen de referencia -->
+            <img src="https://lh3.googleusercontent.com/d/16S9V0N_Yp_B8P9T6X8d_R4m_C6z8f4J1=w600" alt="Logo Score Perfecto 999" class="logo-999">
         </div>
     </header>
 
@@ -767,7 +767,7 @@
             
             <div class="form-group">
                 <label for="situation">¿Cuál es el estado actual de tu reporte negativo?</label>
-                <select id="situation" onchange="calcularDiagnostico()">
+                <select id="situation" onchange="collapseDiagnostico()">
                     <option value="0">-- Selecciona una opción --</option>
                     <option value="1">Tengo registros de obligaciones antiguas ya canceladas que siguen afectando mi score</option>
                     <option value="2">Estoy reportado por una línea o servicio que jamás contraté (Suplantación)</option>
@@ -959,7 +959,7 @@
 
     <!-- LOGICA SCRIPT INTERACTIVA DEL SIMULADOR (VERSION ECUADOR) -->
     <script>
-        function calcularDiagnostico() {
+        function collapseDiagnostico() {
             var selected = document.getElementById("situation").value;
             var resultBox = document.getElementById("diagnostic-result");
             var title = document.getElementById("result-title");
