@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Renova Score - Soluciones de Historial Crediticio</title>
-    <!-- Iconos profesionales -->
+    <!-- Iconos profesionales y tipografía premium -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --equifax-red: #C8102E;      /* Rojo institucional de los títulos */
+            --equifax-red: #C8102E;      /* Rojo institucional */
             --equifax-blue: #002D62;     /* Azul marino profundo corporativo */
-            --equifax-dark: #222222;     /* Gris oscuro para textos legibles */
-            --equifax-light: #F4F6F8;    /* Fondo gris claro limpio */
+            --equifax-dark: #1E293B;     /* Slate oscuro para textos legibles */
+            --equifax-light: #F8FAFC;    /* Fondo gris claro limpio */
             --whatsapp-color: #25D366;   /* Color de contacto directo */
-            --success-green: #28a745;    /* Verde para score alto */
+            --success-green: #10B981;    /* Verde para score alto */
+            --amber-gold: #F59E0B;       /* Dorado para estrellas de calificación */
         }
 
         * {
@@ -40,6 +41,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         .logo {
@@ -56,19 +58,19 @@
             color: var(--equifax-red);
         }
 
-        /* Sección de Introducción Estilo Editorial con Imagen */
+        /* Sección de Introducción Estilo Editorial */
         .intro-banner {
             background-color: var(--equifax-light);
-            padding: 60px 8% 40px 8%;
-            border-bottom: 1px solid #E1E6EB;
+            padding: 80px 8% 60px 8%;
+            border-bottom: 1px solid #E2E8F0;
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 50px;
             flex-wrap: wrap;
         }
 
         .intro-text {
-            flex: 1;
+            flex: 1.2;
             min-width: 300px;
         }
 
@@ -77,80 +79,109 @@
             font-weight: bold;
             text-transform: uppercase;
             font-size: 13px;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             margin-bottom: 15px;
             display: block;
         }
 
         h1 {
             color: var(--equifax-red);
-            font-size: 38px;
+            font-size: 42px;
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 20px;
-            max-width: 900px;
         }
 
         .subtitle {
-            font-size: 18px;
-            color: #555555;
+            font-size: 19px;
+            color: #475569;
             max-width: 800px;
             margin-bottom: 25px;
         }
 
-        /* Imagen del Score (Estilo Dashboard de analítica) */
+        /* Imagen de Analítica */
         .intro-image {
-            flex: 0 0 380px;
+            flex: 0 1 420px;
             background: white;
-            padding: 15px;
+            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border: 1px solid #E1E6EB;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            border: 1px solid #E2E8F0;
             text-align: center;
         }
 
         .intro-image img {
             width: 100%;
-            height: 220px;
+            height: 250px;
             object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
         }
 
         .score-caption {
-            font-size: 12px;
-            color: #777;
-            border-top: 1px solid #EEE;
-            padding-top: 8px;
+            font-size: 13px;
+            color: #64748B;
+            border-top: 1px solid #F1F5F9;
+            padding-top: 10px;
         }
 
-        /* Contenido Principal Orientado a Consultoría */
+        /* Métricas de Impacto */
+        .metrics-bar {
+            background-color: var(--equifax-blue);
+            color: white;
+            padding: 40px 8%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .metric-item h2 {
+            font-size: 36px;
+            color: #FFFFFF;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .metric-item h2 span {
+            color: var(--success-green);
+        }
+
+        .metric-item p {
+            font-size: 14px;
+            opacity: 0.85;
+            letter-spacing: 0.5px;
+        }
+
+        /* Contenido Principal */
         .main-content {
-            padding: 50px 8%;
+            padding: 80px 8%;
             display: flex;
-            gap: 50px;
+            gap: 60px;
             flex-wrap: wrap;
         }
 
         .article-text {
-            flex: 2;
-            min-width: 300px;
+            flex: 1.5;
+            min-width: 320px;
             font-size: 16px;
             color: var(--equifax-dark);
         }
 
         .article-text p {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            font-size: 17px;
+            color: #334155;
         }
 
-        /* Bloque Destacado de Servicios (Inspirado en Equifax) */
         .features-container {
             margin: 40px 0;
             border-left: 4px solid var(--equifax-blue);
             padding-left: 25px;
             background-color: var(--equifax-light);
-            padding-top: 25px;
-            padding-bottom: 1px;
+            padding-top: 30px;
+            padding-bottom: 10px;
+            border-radius: 0 8px 8px 0;
         }
 
         .feature-item {
@@ -159,186 +190,298 @@
 
         .feature-item h3 {
             color: var(--equifax-blue);
-            font-size: 19px;
+            font-size: 20px;
             margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .feature-item h3 i {
             color: var(--equifax-red);
-            font-size: 16px;
+            font-size: 18px;
         }
 
-        /* Sección de Imagen de Éxito */
+        /* Sección Lateral de Éxito */
         .success-section {
             flex: 1;
             min-width: 300px;
-            position: sticky;
-            top: 100px;
-            height: fit-content;
         }
 
         .success-card {
             background-color: var(--equifax-blue);
             color: white;
-            padding: 0;
-            border-radius: 4px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 120px;
         }
 
         .success-card img {
             width: 100%;
-            height: 240px;
+            height: 260px;
             object-fit: cover;
             display: block;
         }
 
         .success-info {
-            padding: 25px;
+            padding: 30px;
         }
 
         .success-card h3 {
-            font-size: 20px;
+            font-size: 22px;
             margin-bottom: 10px;
-            color: white;
         }
 
         .success-card p {
-            font-size: 14px;
+            font-size: 15px;
             opacity: 0.9;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .result-tag {
             display: inline-block;
             background-color: var(--success-green);
             color: white;
-            padding: 5px 10px;
+            padding: 6px 14px;
             border-radius: 4px;
             font-weight: bold;
             font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        /* Botón de Acción Estilo Corporativo */
+        /* SECCIÓN DE TESTIMONIOS (Nueva) */
+        .testimonials-section {
+            background-color: var(--equifax-light);
+            padding: 80px 8%;
+            text-align: center;
+            border-top: 1px solid #E2E8F0;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .testimonials-section h2 {
+            color: var(--equifax-blue);
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .testimonials-section .section-subtitle {
+            font-size: 16px;
+            color: #64748B;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: #FFFFFF;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E2E8F0;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .stars {
+            color: var(--amber-gold);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .testimonial-card p {
+            color: #475569;
+            font-size: 15px;
+            font-style: italic;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .client-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-top: 1px solid #F1F5F9;
+            padding-top: 15px;
+        }
+
+        .client-profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .client-info h4 {
+            font-size: 16px;
+            color: var(--equifax-dark);
+            font-weight: 700;
+        }
+
+        .client-info span {
+            font-size: 13px;
+            color: var(--success-green);
+            font-weight: 600;
+        }
+
+        /* Caja de Llamado a la Acción */
+        .cta-container-wrapper {
+            padding: 0 8%;
+            margin-top: -30px;
+            position: relative;
+            z-index: 10;
+        }
+
         .cta-box {
-            margin-top: 40px;
-            padding: 30px;
+            padding: 40px;
             background-color: var(--equifax-blue);
             color: #FFFFFF;
-            border-radius: 2px;
+            border-radius: 6px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
-            width: 100%;
+            gap: 30px;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.15);
         }
 
         .cta-text h2 {
-            font-size: 22px;
-            margin-bottom: 5px;
+            font-size: 26px;
+            margin-bottom: 8px;
+            font-weight: 700;
         }
 
         .cta-text p {
-            font-size: 14px;
-            opacity: 0.8;
+            font-size: 15px;
+            opacity: 0.85;
         }
 
         .btn-whatsapp {
             background-color: var(--whatsapp-color);
             color: white;
-            padding: 14px 28px;
+            padding: 16px 32px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 17px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             border-radius: 4px;
-            transition: background-color 0.2s ease;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
         }
 
         .btn-whatsapp:hover {
             background-color: #1ebd56;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
         }
 
         /* Pie de Página */
         footer {
-            background: #111111;
+            background: #0F172A;
             color: #FFFFFF;
-            padding: 40px 8%;
-            margin-top: 60px;
-            font-size: 13px;
-            border-top: 4px solid var(--equifax-red);
+            padding: 60px 8% 40px 8%;
+            font-size: 14px;
+            border-top: 5px solid var(--equifax-red);
         }
 
         .footer-content {
-            max-width: 850px;
+            max-width: 900px;
             opacity: 0.7;
+            line-height: 1.8;
         }
 
         .footer-content p {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
-        /* Ajuste para pantallas móviles */
+        /* Ajustes Responsivos */
         @media (max-width: 992px) {
-            .intro-banner { flex-direction: column; text-align: center; }
-            .intro-image { flex: 0 0 auto; width: 100%; max-width: 400px; }
-            .main-content { flex-direction: column; }
-            .success-section { position: static; width: 100%; }
+            .intro-banner { flex-direction: column; text-align: center; padding-top: 50px; }
+            .intro-image { flex: 0 0 auto; width: 100%; max-width: 450px; }
+            .main-content { flex-direction: column; padding-bottom: 40px; }
+            .success-section { width: 100%; }
+            .success-card { position: static; }
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 28px; }
-            .cta-box { flex-direction: column; align-items: flex-start; }
+            h1 { font-size: 32px; }
+            .cta-box { flex-direction: column; align-items: flex-start; text-align: left; padding: 30px; }
             .btn-whatsapp { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Encabezado con Logotipo -->
+    <!-- Encabezado con Logotipo corporativo -->
     <header>
         <div class="logo">
             <i class="fa-solid fa-building-shield"></i> RENOVA <span>SCORE</span>
         </div>
     </header>
 
-    <!-- Banner Editorial Superior con Imagen de Score -->
+    <!-- Banner Editorial Superior con Gráfico de Score -->
     <section class="intro-banner">
         <div class="intro-text">
             <span class="category-tag">Educación e Historial Financiero</span>
             <h1>¿Reportes negativos? Conoce cómo renovar tu score crediticio</h1>
             <div class="subtitle">
-                Te brindamos asesoría estratégica y soluciones bajo la normativa de Habeas Data para corregir la información de tu perfil comercial.
+                Te brindamos asesoría estratégica y soluciones bajo la normativa de Habeas Data para corregir la información de tu perfil comercial de manera legítima.
             </div>
         </div>
         
-        <!-- IMAGEN 1: Gráficas de Score / Analítica comercial -->
+        <!-- IMAGEN 1: Analítica y Score Crediticio -->
         <div class="intro-image">
-            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="Dashboard e Indicadores Crediticios">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="Dashboard de Indicadores Crediticios">
             <div class="score-caption">
-                Indicadores y optimización de variables de riesgo comercial.
+                Simulación corporativa de optimización de variables de riesgo comercial.
             </div>
         </div>
     </section>
 
-    <!-- Cuerpo de la Página con Contenido y Foto de Éxito -->
+    <!-- Barra de Indicadores y Métricas Profesionales -->
+    <div class="metrics-bar">
+        <div class="metric-item">
+            <h2>940<span>+</span></h2>
+            <p>Casos Exitosos Gestionados</p>
+        </div>
+        <div class="metric-item">
+            <h2>98<span>%</span></h2>
+            <p>Índice de Satisfacción</p>
+        </div>
+        <div class="metric-item">
+            <h2>15<span> días</span></h2>
+            <p>Tiempo Promedio de Respuesta</p>
+        </div>
+    </div>
+
+    <!-- Cuerpo Principal: Contenido y Foto Corporativa -->
     <main class="main-content">
         <div class="article-text">
             <p>Mantener un historial financiero transparente es la llave para acceder a nuevas oportunidades de financiamiento, vivienda o crecimiento empresarial. Cuando existen datos desactualizados o reportes erróneos, tu puntaje se ve afectado severamente, limitando tu capacidad de progreso frente al sector bancario.</p>
             
             <p>En <strong>Renova Score</strong> estructuramos soluciones a tu medida para resolver estas eventualidades, guiándote paso a paso en la rectificación y mejora de tu reputación financiera:</p>
 
-            <!-- Bloque de Servicios Estilo Institucional -->
+            <!-- Lista de Servicios con Iconos -->
             <div class="features-container">
                 <div class="feature-item">
                     <h3><i class="fa-solid fa-circle-check"></i> Diagnóstico y Corrección de Datos</h3>
-                    <p>Evaluamos exhaustivamente tu reporte crediticio para identificar inconsistencies, suplantaciones de identidad o deudas caducadas que por ley ya no deberían estar visibles.</p>
+                    <p>Evaluamos exhaustivamente tu reporte crediticio para identificar inconsistencias, suplantaciones de identidad o deudas caducadas que por ley ya no deberían estar visibles.</p>
                 </div>
                 <div class="feature-item">
                     <h3><i class="fa-solid fa-circle-check"></i> Aplicación de Habeas Data</h3>
@@ -353,36 +496,98 @@
             <p>No permitas que un reporte del pasado detenga tus proyectos. La legislación actual protege tu derecho a la actualización de tus datos financieros una vez cumplidos los términos establecidos.</p>
         </div>
 
-        <!-- IMAGEN 2: Asesor y cliente feliz analizando resultados óptimos -->
+        <!-- IMAGEN 2: Asesoría Presencial Exitosa -->
         <aside class="success-section">
             <div class="success-card">
-                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Asesoría crediticia exitosa">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Asesoría crediticia exitosa con cliente">
                 <div class="success-info">
                     <h3>¡Tu tranquilidad es nuestra meta!</h3>
-                    <p>Nuestro equipo de asesores legales y financieros te acompañará en todo el proceso hasta alcanzar un perfil crediticio saludable.</p>
-                    <span class="result-tag">Score Óptimo Alcanzado</span>
+                    <p>Nuestro equipo de asesores legales y financieros te acompañará en todo el proceso hasta alcanzar un perfil crediticio saludable y óptimo.</p>
+                    <span class="result-tag">Score Saludable Asegurado</span>
                 </div>
             </div>
         </aside>
+    </main>
 
-        <!-- Caja de Llamado a la Acción (Ancho Completo) -->
+    <!-- SECCIÓN DE TESTIMONIOS CON IMÁGENES -->
+    <section class="testimonials-section">
+        <h2>Casos de éxito y testimonios</h2>
+        <p class="section-subtitle">Conoce las experiencias de personas que lograron recuperar su acceso al sistema crediticio gracias a nuestro acompañamiento estratégico.</p>
+        
+        <div class="testimonials-grid">
+            <!-- Testimonio 1 -->
+            <div class="testimonial-card">
+                <div>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Tenía un reporte injusto por una línea celular de hace 6 años que no me dejaba sacar mi crédito de vivienda. Con el equipo de Renova logramos la eliminación definitiva en menos de 20 días. ¡Totalmente recomendados!"</p>
+                </div>
+                <div class="client-profile">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80" alt="Cliente Diana Martínez">
+                    <div class="client-info">
+                        <h4>Diana Martínez</h4>
+                        <span>Puntaje Optimizado</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonio 2 -->
+            <div class="testimonial-card">
+                <div>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Excelente servicio y atención profesional. Me explicaron con peras y manzanas cómo funcionaba la Ley de Habeas Data y limpiaron mi historial de un saldo que ya había pagado pero que seguía reportado."</p>
+                </div>
+                <div class="client-profile">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80" alt="Cliente Carlos Mendoza">
+                    <div class="client-info">
+                        <h4>Carlos Mendoza</h4>
+                        <span>Historial Actualizado</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonio 3 -->
+            <div class="testimonial-card">
+                <div>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"Pensé que nunca podría volver a pedir una tarjeta o un préstamo de libre inversión. Su diagnóstico fue muy acertado y el plan estratégico elevó mi puntaje significativamente en pocos meses."</p>
+                </div>
+                <div class="client-profile">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&h=150&q=80" alt="Cliente Andrea Restrepo">
+                    <div class="client-info">
+                        <h4>Andrea Restrepo</h4>
+                        <span>Apta para Créditos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Caja de Llamado a la Acción (CTA Inferior superpuesto) -->
+    <div class="cta-container-wrapper">
         <div class="cta-box">
             <div class="cta-text">
-                <h2>¿Listo para limpiar tu perfil financiero?</h2>
-                <p>Consulta con uno de nuestros asesores expertos de manera inmediata.</p>
+                <h2>¿Deseas evaluar tu caso de manera profesional?</h2>
+                <p>Agenda una consulta inmediata vía WhatsApp y protege tus derechos financieros.</p>
             </div>
+            <!-- Recuerda reemplazar REMPLAZA_CON_TU_NUMERO por tu celular real, ej: 573001234567 -->
             <a href="https://wa.me/REMPLAZA_CON_TU_NUMERO" class="btn-whatsapp" target="_blank">
                 <i class="fa-brands fa-whatsapp"></i> Iniciar Asesoría por WhatsApp
             </a>
         </div>
-    </main>
+    </div>
 
     <!-- Pie de Página Institucional -->
     <footer>
         <div class="footer-content">
             <p><strong>&copy; 2026 Renova Score.</strong> Todos los derechos reservados.</p>
-            <p>Información y servicios de consultoría especializada en derecho de Habeas Data y protección de datos financieros.</p>
-            <p style="font-size: 11px; margin-top: 15px; opacity: 0.5;">Aviso: Las marcas y estilos visuales tomados como referencia pertenecen a sus respectivos titulares. Este sitio web provee asesoría independiente de carácter privado. Las imágenes son ilustrativas del resultado potencial.</p>
+            <p>Información, pedagogía y servicios de consultoría especializada en derecho de Habeas Data y protección de datos comerciales y financieros.</p>
+            <p style="font-size: 11.5px; margin-top: 15px; opacity: 0.45;">Aviso Legal: Las marcas, logotipos y referencias visuales mencionadas pertenecen a sus respectivos titulares. Este sitio web provee asesoría privada e independiente y no representa de manera directa a ninguna central de riesgo gubernamental o bancaria. Las imágenes de testimonios son de carácter ilustrativo.</p>
         </div>
     </footer>
 
