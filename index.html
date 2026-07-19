@@ -33,7 +33,7 @@
         /* Barra de Navegación */
         header {
             background: #FFFFFF;
-            padding: 20px 8%;
+            padding: 15px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -42,6 +42,12 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
         .logo {
@@ -56,6 +62,14 @@
 
         .logo span {
             color: var(--equifax-red);
+        }
+
+        /* Contenedor del Isotipo Corporativo 999 */
+        .logo-999 {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+            display: block;
         }
 
         /* Sección de Introducción Estilo Editorial */
@@ -654,15 +668,20 @@
             h1 { font-size: 32px; }
             .cta-box { flex-direction: column; align-items: flex-start; text-align: left; padding: 30px; }
             .btn-whatsapp { width: 100%; justify-content: center; }
+            header { flex-direction: column; gap: 15px; padding: 20px; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Encabezado con Logotipo corporativo -->
+    <!-- Encabezado con Logotipo y el Isotipo Corporativo 999 -->
     <header>
-        <div class="logo">
-            <i class="fa-solid fa-building-shield"></i> RENOVA <span>SCORE</span>
+        <div class="brand-container">
+            <div class="logo">
+                <i class="fa-solid fa-building-shield"></i> RENOVA <span>SCORE</span>
+            </div>
+            <!-- Isotipo vectorial de alta gama "999 Score Perfecto" -->
+            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=150&h=150&q=80" alt="Isotipo 999 Score Perfecto" class="logo-999">
         </div>
     </header>
 
@@ -939,7 +958,7 @@
     </footer>
 
     <!-- LOGICA SCRIPT INTERACTIVA DEL SIMULADOR (VERSION ECUADOR) -->
-    <script {
+    <script>
         function calcularDiagnostico() {
             var selected = document.getElementById("situation").value;
             var resultBox = document.getElementById("diagnostic-result");
@@ -967,7 +986,7 @@
                 text.innerHTML = "Las entidades financieras del Ecuador están obligadas por la Superintendencia a reportar de manera mensual y oportuna los cambios de estado en las deudas. Tu caso aplica para una exigencia inmediata de actualización técnica.";
             }
         }
-    } </script>
+    </script>
 
 </body>
 </html>
